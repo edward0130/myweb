@@ -13,7 +13,7 @@ class AuthMiddleware(MiddlewareMixin):
         # 方法没有返回值 默认为none, 继续向后
         # 设置返回值 HttpResponse, render, redirect
 
-        # 获取请求 url 路径信息
+        # 获取请求 url 路径信息， 判断如果是登录页面直接跳过session验证
         if request.path_info == "/login/":
             return
 
