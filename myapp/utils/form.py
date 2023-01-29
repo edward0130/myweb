@@ -135,3 +135,12 @@ class AdminResetModelForm(BootStrapModelForm):
         if password != confirm:
             raise ValidationError("密码不一致")
         return confirm
+
+
+class OrderModelForm(BootStrapModelForm):
+    class Meta:
+        model = models.Order
+        # fields = "__all__"
+        exclude = ['oid', 'admin']
+
+

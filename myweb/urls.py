@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from myapp.views import user, depart, pretty, admin, account
+from myapp.views import user, depart, pretty, admin, account, order
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -50,5 +50,12 @@ urlpatterns = [
     path('login/', account.login),
     path('logout/', account.logout),
     path('image/code/', account.image_code),
+
+    # 订单管理
+    path('order/list/', order.order_list),
+    path('order/add/', order.order_add),
+    path('order/del/', order.order_del),
+    path('order/detail/', order.order_detail),
+    path('order/edit/', order.order_edit),
 
 ]
